@@ -30,7 +30,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Летающие сердечки и искорки снизу вверх */
+        /* Летающие сердечки и искорки */
         .floating-heart {
             position: absolute;
             bottom: -50px;
@@ -45,7 +45,7 @@
             100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Главная карточка: матовое стекло с мягкой тенью */
+        /* Главная карточка */
         .card {
             position: relative;
             z-index: 10;
@@ -53,7 +53,7 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 30px;
-            padding: 35px 25px;
+            padding: 30px 20px;
             max-width: 440px;
             width: 100%;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
@@ -62,13 +62,13 @@
             animation: fadeIn 1.2s ease-in-out;
         }
 
-        /* Винтажный Polaroid-снимок */
+        /* Polaroid-снимок */
         .photo-frame {
             background: #fff;
-            padding: 12px 12px 35px 12px;
+            padding: 10px 10px 30px 10px;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 210px;
+            max-width: 200px;
             margin: 0 auto 15px auto;
             transform: rotate(-2deg);
             transition: transform 0.3s ease;
@@ -78,26 +78,25 @@
         }
         .photo-frame img {
             width: 100%;
-            height: 190px;
+            height: 180px;
             object-fit: cover;
             border-radius: 4px;
         }
 
-        /* Заголовок и пульсирующие сердечки */
         .header-container {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         h1 {
             font-family: 'Marck Script', cursive;
-            font-size: 38px;
+            font-size: 36px;
             color: #2b2d42;
         }
         .pulse-heart {
-            font-size: 24px;
+            font-size: 22px;
             animation: pulse 1.5s infinite;
         }
         @keyframes pulse {
@@ -106,7 +105,7 @@
             100% { transform: scale(1); }
         }
 
-        /* Аккуратная кнопка музыки */
+        /* Кнопка музыки */
         .music-btn {
             background: #fff;
             border: 2px solid #ff4b5c;
@@ -116,7 +115,7 @@
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(255, 75, 92, 0.15);
         }
@@ -125,19 +124,35 @@
             color: #fff;
         }
 
+        /* Блок субтитров музыки */
+        .lyrics-box {
+            background: rgba(255, 240, 245, 0.8);
+            border-radius: 12px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-style: italic;
+            font-size: 14px;
+            color: #c72c41;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #ffb6c1;
+        }
+
         /* Блок текста с эффектом печати */
         .letter-container {
-            min-height: 140px;
+            min-height: 110px;
             text-align: left;
             margin-bottom: 20px;
             background: rgba(255, 255, 255, 0.65);
-            padding: 18px;
+            padding: 16px;
             border-radius: 16px;
             border-left: 4px solid #ff4b5c;
         }
         .typed-text {
             font-size: 15px;
-            line-height: 1.7;
+            line-height: 1.6;
             color: #4a4e69;
             white-space: pre-line;
             font-weight: 400;
@@ -145,7 +160,7 @@
         .cursor {
             display: inline-block;
             width: 2px;
-            height: 16px;
+            height: 15px;
             background-color: #ff4b5c;
             vertical-align: middle;
             margin-left: 2px;
@@ -156,19 +171,18 @@
             50% { opacity: 0; }
         }
 
-        /* Кнопка действия внизу с салютом и переходом */
+        /* Кнопка действия внизу */
         .btn-sorry {
             background: linear-gradient(135deg, #ff4b5c, #ff6b81);
             color: #fff;
-            padding: 15px 30px;
+            padding: 14px 28px;
             border-radius: 30px;
-            text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(255, 75, 92, 0.4);
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 15px;
             width: 100%;
         }
         .btn-sorry:hover {
@@ -190,22 +204,27 @@
     </audio>
 
     <div class="card">
-        <!-- Ваше фото в стиле Polaroid (локальный файл photo.jpg) -->
+        <!-- Фото Polaroid -->
         <div class="photo-frame">
             <img src="photo.jpg" alt="Наше фото">
         </div>
 
-        <!-- Заголовок и пульсирующие сердечки -->
+        <!-- Заголовок -->
         <div class="header-container">
             <span class="pulse-heart">💖</span>
             <h1>Прости меня...</h1>
             <span class="pulse-heart">💖</span>
         </div>
         
-        <!-- Кнопка включения музыки -->
+        <!-- Кнопка музыки -->
         <button class="music-btn" onclick="toggleMusic()">🎵 Включить музыку</button>
 
-        <!-- Текст письма с эффектом печати и мигающим курсором -->
+        <!-- Субтитры песни -->
+        <div class="lyrics-box" id="lyrics">
+            🎵 Мирбек Атабеков — Кечир мени
+        </div>
+
+        <!-- Текст извинения с печатью -->
         <div class="letter-container">
             <span class="typed-text" id="typed"></span><span class="cursor"></span>
         </div>
@@ -214,18 +233,35 @@
         <button class="btn-sorry" onclick="forgiveMe()">Нажми сюда ✨</button>
     </div>
 
-    <!-- Библиотека конфетти для салюта -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
-        // === ВСТАВЬ СВОЮ ССЫЛКУ СЮДА (например, на Instagram) ===
+        // Твоя ссылка на Instagram Reel
         const MY_LINK = "https://www.instagram.com/reel/DbTZAoOymEX/?psln=YjZsdnNjd3VhYXht/";
 
         // Текст извинения
         const text = `Кечирчииии 💕`;
 
-        // Управление музыкой
+        // Караоке-субтитры для песни Мирбека Атабекова
+        const lyricsData = [
+            { time: 0, text: "🎵 Мирбек Атабеков — Кечир мени" },
+            { time: 13, text: "Санага салып менин түшүмө кирдиң..." },
+            { time: 18, text: "Садагам күнүм болуп күлмүңдөп тийгиң..." },
+            { time: 24, text: "Кайдасың айтчы деги ашыгым азыр?" },
+            { time: 29, text: "Кадырын кечиреми кечикпи билдим..." },
+            { time: 35, text: "Эстесем эзилемин от болуп күйөм..." },
+            { time: 41, text: "Эх жаным кечирилгис беле эле күнөөм?" },
+            { time: 47, text: "Мейли күн арадан ай жылдар өтсө да..." },
+            { time: 52, text: "Мен сени махабатым баары бир сүйөм!" },
+            { time: 58, text: "Эркем ай, кечирем сени..." },
+            { time: 64, text: "Эркелевемби кайрылып келчи, кечирип мени..." },
+            { time: 70, text: "Сүйүүмө күбөм менин асманда булут..." },
+            { time: 75, text: "Сезимим сага деген булактай тунук..." }
+        ];
+
         const music = document.getElementById('bgMusic');
+        const lyricsBox = document.getElementById('lyrics');
         let isPlaying = false;
+
         function toggleMusic() {
             if (isPlaying) {
                 music.pause();
@@ -238,6 +274,17 @@
             }
         }
 
+        // Обновление субтитров при проигрывании музыки
+        music.addEventListener('timeupdate', () => {
+            const currentTime = music.currentTime;
+            for (let i = lyricsData.length - 1; i >= 0; i--) {
+                if (currentTime >= lyricsData[i].time) {
+                    lyricsBox.innerText = lyricsData[i].text;
+                    break;
+                }
+            }
+        });
+
         // Эффект печати текста
         let index = 0;
         function typeWriter() {
@@ -249,7 +296,7 @@
         }
         window.onload = typeWriter;
 
-        // Генерация летающих сердечек и искорок на фоне
+        // Летающие сердечки
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('floating-heart');
@@ -263,7 +310,7 @@
         }
         setInterval(createHeart, 400);
 
-        // Салют и плавный переход по ссылке при клике на кнопку
+        // Салют и переход по ссылке
         function forgiveMe() {
             music.play();
 
@@ -291,7 +338,6 @@
                 }
             })();
 
-            // Плавный переход по твоей ссылке через 1.8 секунды после салюта
             setTimeout(() => {
                 window.location.href = MY_LINK;
             }, 1800);
